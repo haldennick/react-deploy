@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './Footer.css';
+import './../App.css';
 
 const MainContent = () => {
   const [utcTime, setUtcTime] = useState('');
@@ -8,7 +8,6 @@ const MainContent = () => {
   const [weather, setWeather] = useState('');
   const [lat, setLat] = useState('');
   const [lon, setLon] = useState('');
-  const [santiagoTime, setSantiagoTime] = useState('');
   const API_KEY = 'd434f2813aa4eb60f5467374e854cc2b'; // Replace with your OpenWeather API key
 
   useEffect(() => {
@@ -56,24 +55,12 @@ const MainContent = () => {
     }
   }, [lat, lon]);
 
-  useEffect(() => {
-    // Fetch UTC time
-    const utcDate = new Date();
-    setUtcTime(utcDate.toUTCString());
-  
-    // Convert UTC time to Santiago time
-    const santiagoOffset = -3 * 60 * 60 * 1000; // Santiago is UTC-3
-    const santiagoDate = new Date(utcDate.getTime() + santiagoOffset);
-    setSantiagoTime(santiagoDate.toLocaleTimeString([], { timeZone: 'America/Santiago' }));
-  }, []);
-
   return (
     <div className="main-content">
       <div className="main-content__section">
         <h3>Time</h3>
         <p>UTC Time: {utcTime}</p>
         <p>Local Time ({location}): {localTime}</p>
-        <p>Santiago Time: {santiagoTime}</p>
       </div>
       <div className="main-content__section">
         <h3>Weather</h3>

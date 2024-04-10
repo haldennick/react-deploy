@@ -1,41 +1,3 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 /* App.css */
 body {
   font-family: Arial, sans-serif;
@@ -53,7 +15,7 @@ header {
 
 header h1 {
   margin: 0;
-  font-size: 32px;
+  font-size: 2rem; /* Larger font size */
 }
 
 nav ul {
@@ -69,7 +31,7 @@ nav ul li {
 nav ul li a {
   color: #fff;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 1.2rem; /* Larger font size */
 }
 
 nav ul li a:hover {
@@ -83,10 +45,50 @@ nav ul li a:hover {
 }
 
 .container h2 {
-  font-size: 24px;
+  font-size: 1.8rem; /* Larger font size */
 }
 
 .container p {
-  font-size: 18px;
+  font-size: 1.4rem; /* Larger font size */
   line-height: 1.6;
+}
+
+.main-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center content horizontally */
+}
+
+.main-content__section {
+  flex: 1 0 calc(100% - 20px); /* Each section takes up 100% width on small screens with some margin */
+  padding: 20px;
+  background-color: #f0f0f0; /* White background color */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow */
+  margin: 10px; /* Add margin between sections */
+}
+
+@media (min-width: 768px) {
+  .main-content__section {
+    flex: 1 0 calc(50% - 20px); /* Each section takes up 50% width on medium screens with some margin */
+  }
+}
+
+@media (min-width: 1024px) {
+  .main-content__section {
+    flex: 1 0 calc(33.33% - 20px); /* Each section takes up 33.33% width on large screens with some margin */
+  }
+}
+header {
+  background-color: #3d6c9d; /* Nice shade of blue */
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+footer {
+  background-color: #3d6c9d; /* Same shade of blue as header */
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
 }
