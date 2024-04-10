@@ -1,0 +1,71 @@
+/* weather.css */
+
+.main-container {
+    max-width: fit-content;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #00000000;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      /* Use Flexbox to display children horizontally */
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .main-container > * {
+    /* Adjust margins, padding, and other styles as needed */
+    flex: 0 0 calc(33.33% - 20px); /* Each child takes up one-third of the container width with some spacing */
+    margin: 10px;
+    box-sizing: border-box;
+  }
+  
+  /* Adjust styles for smaller screens if needed */
+  @media (max-width: 768px) {
+    .main-container > * {
+      flex-basis: calc(50% - 20px); /* Each child takes up one-half of the container width on smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .main-container > * {
+      flex-basis: calc(100% - 20px); /* Each child takes up full width of the container on even smaller screens */
+    }
+  }
+
+  .weather-widget {
+    margin-bottom: 20px;
+    background-color: #7793b1;
+    max-width: fit-content;
+    max-height: fit-content;
+    
+  }
+
+  .weather-details {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .weather-icon img {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .weather-description {
+    margin-left: 20px;
+  }
+  
+  .timezone-widget {
+    margin-bottom: 20px;
+  }
+  
+  .timezone-details {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .worldmap-widget {
+    margin-bottom: 20px;
+  }
+  
+  /* Add more styles as needed */
+  
