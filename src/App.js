@@ -5,21 +5,21 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
 import Weather from './pages/Weather';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, BrowserRouter } from 'react-router-dom';
 
 function App() {
   return (
-    <Router basename="/react-deploy">
+    <BrowserRouter basename="/react-deploy">
     <div>
       <Header/>
       <Routes>
-        <Route path='/' element={<Home/>} />
-        <Route path="/about" element={<About/>}/>
-        <Route path="/weather" element={<Weather/>}/>
+        <Route path='/' element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/weather" element={<Weather />} />
       </Routes>
     </div>
     <Footer/>
-   </Router>
+   </BrowserRouter>
   );
 }
 
